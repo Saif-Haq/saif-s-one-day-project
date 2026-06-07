@@ -63,7 +63,7 @@ function migrateLegacyGrid(grid: unknown): LedLevel[][] | null {
     return null
   }
   return grid.map((row) =>
-    row.map((cell) => (cell ? (2 as LedLevel) : (0 as LedLevel))),
+    row.map((cell: unknown): LedLevel => (cell ? (2 as LedLevel) : (0 as LedLevel))),
   )
 }
 
