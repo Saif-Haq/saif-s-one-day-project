@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+.glyph-page {
+  --glyph-bg: #000000;
+  --glyph-card: #121212;
+  --glyph-led-bright: #ffffff;
+  --glyph-led-dim: #737373;
+  --glyph-led-off: #1a1a1a;
+  --glyph-accent: #e8342a;
+  --glyph-muted: #6b6b6b;
+  --glyph-ring: #2a2a2a;
+
+  min-height: 100dvh;
+  background: var(--glyph-bg);
+  color: #fff;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.glyph-serif {
+  font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+}
+
+.glyph-led-ring {
+  position: relative;
+  border-radius: 50%;
+  background: #0a0a0a;
+  box-shadow:
+    inset 0 0 0 1px var(--glyph-ring),
+    0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+.glyph-led-ring::after {
+  content: '';
+  position: absolute;
+  bottom: 6%;
+  right: 6%;
+  width: 14%;
+  height: 14%;
+  border-radius: 50%;
+  border: 1px solid var(--glyph-ring);
+  background: #0d0d0d;
+  pointer-events: none;
+}
+
+.glyph-led-cell {
+  aspect-ratio: 1;
+  border-radius: 1px;
+  transition: background-color 80ms ease, box-shadow 80ms ease;
+}
+
+.glyph-led-cell--bright {
+  background: var(--glyph-led-bright);
+  box-shadow:
+    0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 6px rgba(255, 255, 255, 0.35);
+}
+
+.glyph-led-cell--dim {
+  background: var(--glyph-led-dim);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.12);
+}
+
+.glyph-led-cell--off {
+  background: var(--glyph-led-off);
+}
+
+.glyph-led-cell--editable {
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.glyph-led-cell--editable:hover {
+  outline: 1px solid rgba(255, 255, 255, 0.15);
+  outline-offset: -1px;
+}
+
+.glyph-frame-card {
+  background: var(--glyph-card);
+  border-radius: 18px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.glyph-frame-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.glyph-accent-btn {
+  background: var(--glyph-accent);
+  transition: filter 150ms ease, transform 150ms ease;
+}
+
+.glyph-accent-btn:hover {
+  filter: brightness(1.08);
+}
+
+.glyph-accent-btn:active {
+  transform: scale(0.96);
+}
+
+.glyph-code-panel {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: 12px;
+}
+
+.glyph-code-panel pre {
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+@keyframes glyph-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glyph-animate-in {
+  animation: glyph-fade-in 320ms ease both;
+}

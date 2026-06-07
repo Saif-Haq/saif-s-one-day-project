@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <rect width="1000" height="1000" fill="white"/>
+  <text
+    x="500"
+    y="430"
+    text-anchor="middle"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-weight="900"
+    font-size="210"
+    fill="black"
+  >Coming</text>
+  <text
+    x="500"
+    y="670"
+    text-anchor="middle"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-weight="900"
+    font-size="210"
+    fill="black"
+  >Soon</text>
+</svg>
